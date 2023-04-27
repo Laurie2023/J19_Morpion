@@ -74,7 +74,7 @@ class MultiplesGames #gestion de parties multiples avec historiques
   end 
 
   def ready_to_play #check avant de lancer la partie
-    puts "\nEs-tu prêt pour (re)commencer ce DUEL ?".colorize(:color => :light_magenta, :mode => :bold)
+    puts "\nEs-tu prêt pour (re)commencer un DUEL de MORPION MANIA ?".colorize(:color => :light_magenta, :mode => :bold)
     print "> ".colorize(:magenta)
     while check = 0
       user_answer = gets.chomp.upcase.rstrip
@@ -125,8 +125,8 @@ class MultiplesGames #gestion de parties multiples avec historiques
   end 
 
   def the_end #fin du tournoi
-    puts "\nMERCI d'avoir jouer à MORPION MANIA\n"
-    puts "A bientôt".colorize(:magenta)
+    puts "\nMERCI d'avoir jouer à MORPION MANIA  !!\n"
+    puts "A bientôt !"
   end 
 
 end 
