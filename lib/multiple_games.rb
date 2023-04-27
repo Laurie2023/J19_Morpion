@@ -74,9 +74,11 @@ class MultiplesGames #gestion de parties multiples avec historiques
   end 
 
   def ready_to_play #check avant de lancer la partie
-    puts "\nEs-tu prêt pour (re)commencer un DUEL de MORPION MANIA ?".colorize(:color => :light_magenta, :mode => :bold)
-    print "> ".colorize(:magenta)
+    check = 0
     while check = 0
+      puts "\nEs-tu prêt pour (re)commencer un DUEL de MORPION MANIA ?".colorize(:color => :light_magenta, :mode => :bold)
+      print "> ".colorize(:magenta)
+
       user_answer = gets.chomp.upcase.rstrip
       if (user_answer == "OUI" || user_answer == "YES")
         check = 1
