@@ -1,0 +1,27 @@
+Bonjour à tous ! 
+
+Ce dossier contient tous les éléments de programmation d'un jeu de Morpion.
+
+Le fichier "app.rb" permet de lancer l'application / le jeu.
+Les fichiers contenus dans "lib" correspondent à des segments du jeu :
+- "player.rb" défini l'objet joueur
+- "board.rb" défini l'objet plateau de jeu
+- "board_case.rb" défini chaque case d'un plateau de jeu
+- "game.rb" défini une partie de morpion
+- "multiple_games.rb" défini une série de parties de morpion
+
+A noter que les différentes class sont liées comme suit : 
+- un "multiple_games" est composé d'une série de "game"
+- un "game" est notamment défini par ses deux "player" et son "board"
+- un "board" est notamment défini par ses neuf "board_case"
+
+A date, aucun test n'a été codé - aucun fichier dans le dossier spec. 
+
+>>>> GEMFILE
+source "https://rubygems.org"
+ruby '3.0.0'
+gem 'pry'
+gem 'colorize'
+
+>>>> AUTOR
+Laurie.B

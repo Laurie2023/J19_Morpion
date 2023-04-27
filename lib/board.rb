@@ -1,6 +1,13 @@
 require 'pry'
+require 'colorize'
 
 require_relative 'board_case.rb'
+
+#Class qui défini l'objet plateau de jeu (board), notamment via la création de 9 cases (board_case)
+
+#Cette class comprend 2 méthodes : 
+#1/l'affichage du plateau de jeu, 
+#2/un test qui vérifie si toutes les cases du plateau sont occupées.
 
 class Board
   attr_accessor :board_cases
@@ -15,30 +22,23 @@ class Board
   end 
 
   def display_board #affiche le plateau seul
-    #tokens_on_the_board? #actualisation de l'affichage des jetons
 
-    puts "╭───┬───┬───╮"
+    puts "    A   B   C".colorize(:light_black)
+    puts "  ╭───┬───┬───╮"
+    print "1 ".colorize(:light_black)
     puts "│#{self.board_cases["A1"].display}│#{self.board_cases["B1"].display}│#{self.board_cases["C1"].display}│"
-    puts "├───┼───┼───┤"
+    puts "  ├───┼───┼───┤"
+    print "2 ".colorize(:light_black)
     puts "│#{self.board_cases["A2"].display}│#{self.board_cases["B2"].display}│#{self.board_cases["C2"].display}│"
-    puts "├───┼───┼───┤"
+    puts "  ├───┼───┼───┤"
+    print "3 ".colorize(:light_black)
     puts "│#{self.board_cases["A3"].display}│#{self.board_cases["B3"].display}│#{self.board_cases["C3"].display}│"
-    puts "╰───┴───┴───╯"
+    puts "  ╰───┴───┴───╯"
 
   end 
 
-  #def tokens_on_the_board?#(token) #affiche le plateau avec les jetons 
-  #  token = "X" #A SUPPRIMER
-  
-  #  self.board_cases.each do |key,one_case|
-  #    one_case.used == 1 ? one_case.display = " #{token} " : nil
-  #  end  
-  #end 
-  
+  def all_cases_used #vérifie si toutes les cases du plateau sont occupées
+    used_cases_on_board = self.board_cases.select{|key,item_boardcase|item_boardcase.used == 1}
+    used_cases_on_board.length == self.board_cases.length ? true : false
+  end 
 end 
-
-#test = Board.new
-#test.display_board
-#puts test.board_cases.keys
-#test.board_cases["A1"].name_case
-#binding.pry
